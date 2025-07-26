@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página Inicial - Soluções em TI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      animation: fadeIn 1s ease-in-out;
+      padding-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .menu-fixo {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #004aad;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .menu-fixo ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-fixo ul li {
+      margin: 0 20px;
+    }
+
+    .menu-fixo ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .menu-fixo ul li a:hover {
+      color: #ffcc00;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    header button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    header button:hover {
+      background-color: #ffaa00;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .servicos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .servico {
+      flex: 1 1 250px;
+      max-width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .servico:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    .servico h3 {
+      margin-top: 0;
+      color: #004aad;
+    }
+
+    .servico button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .servico button:hover {
+      background-color: #002b5c;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    .botoes-contato {
+      margin-top: 20px;
+    }
+
+    .botoes-contato a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #000;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .botoes-contato a:hover {
+      background-color: #ffaa00;
+    }
+
+    .whatsapp-flutuante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .whatsapp-flutuante img {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-flutuante img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="menu-fixo">
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#orcamento">Orçamento</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="formulario.html">Inscrição</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Seja Bem Vindo Jc_Computer_Services_ei</h1>
+    <h2>Oferecemos soluções completas em TI para seu negócio</h2>
+    <button onclick="window.location.href='#orcamento'">Orçar Agora</button>
+  </header>
+
+  <section id="servicos">
+    <h2>Nossos Principais Serviços</h2>
+    <div class="servicos">
+      <div class="servico">
+        <h3>Aulas de Informática</h3>
+        <p>Ensino prático e teórico para iniciantes e avançados.</p>
+        <button onclick="window.location.href='formulario.html'">Inscreva-se</button>
+      </div>
+
+      <div class="servico">
+        <h3>Suporte Técnico</h3>
+        <p>Atendimento rápido e eficaz para resolver problemas técnicos.</p>
+      </div>
+      <div class="servico">
+        <h3>Instalação de Redes</h3>
+        <p>Projetamos e instalamos redes cabeadas e Wi-Fi.</p>
+      </div>
+      <div class="servico">
+        <h3>Manutenção de Computadores</h3>
+        <p>Formatamos, limpamos e otimizamos seu equipamento.</p>
+      </div>
+      <div class="servico">
+        <h3>Venda de Equipamentos</h3>
+        <p>Computadores, acessórios e soluções sob medida para seu negócio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="orcamento" style="background-color: #f7f7f7;">
+    <h2>Solicite um Orçamento</h2>
+    <p>Entre em contato conosco para um atendimento personalizado.</p>
+  </section>
+
+  <section id="sobre" style="padding: 60px 20px; background-color: #f7f7f7; color: #002b5c; text-align: center;">
+    <h2 style="font-size: 2em; margin-bottom: 20px;">Sobre Nós</h2>
+    <div style="max-width: 800px; margin: 0 auto; font-size: 1.1em; line-height: 1.6;">
+      <p><strong>Fundada em 2023</strong>, nossa empresa nasceu com o propósito de oferecer <strong>soluções inovadoras em tecnologia da informação</strong>.</p>
+      <p>Com mais de <strong>2 anos de experiência</strong>, nos destacamos pela excelência técnica e compromisso com os resultados.</p>
+      <ul style="list-style: none; padding: 0; margin-top: 20px;">
+        <li>✔ Responsabilidade técnica</li>
+        <li>✔ Transparência</li>
+        <li>✔ Compromisso com a inovação</li>
+        <li>✔ Foco em resultados práticos</li>
+      </ul>
+    </div>
+  </section>
+ <!-- Galeria de Fotos -->
+  <section class="galeria" style="padding: 40px 20px; text-align: center;">
+    <h2 style="color: #004aad; margin-bottom: 20px;">Os Nossos Trabalhos Realizados</h2>
+    <div class="galeria-grid" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+      <img src="trabalho.jpg" alt="Trabalho " onclick="abrirLightbox(this)" style="width: 250px; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.3s ease;">
+      <img src="ModernFutsal.png" alt="Trabalho 2" onclick="abrirLightbox(this)" style="width: 250px; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.3s ease;">
+      <img src="Blue And Orange.jpg" alt="Blue And Orange" onclick="abrirLightbox(this)" style="width: 250px; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.3s ease;">
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="fecharLightbox()" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
+    <img id="lightbox-img" src="" alt="Imagem Ampliada" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 20px #fff;">
+  </div>
+
+  <footer>
+    <h3>Contato</h3>
+    <p>Email: <a href="mailto:jccomputerservicesei@gmail.com">jccomputerservicesei@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/258879317552" target="_blank">+258 87 931 7552</a></p>
+    <p>Instagram: <a href="www.instagram.com/jc_computer_services_ei"target="_blank">jc_computer_services_ei</a></p>
+    <p>&copy; 2025 - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <div class="whatsapp-flutuante">
+    <a href="https://wa.me/258879317552" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <!-- Script do Lightbox -->
+  <script>
+    function abrirLightbox(imagem) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imagem.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function fecharLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Administrador - Galeria de Fotos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 16px; padding: 32px; box-shadow: 0 6px 18px rgba(0,0,0,0.08);}
+    h1 { font-size: 2rem; margin-bottom: 20px; }
+    .add-photo { margin-bottom: 18px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 18px; }
+    .photo-card { background: #f0f0f0; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.07);}
+    .photo-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+    .remove-btn {
+      position: absolute; top: 8px; right: 8px; background: #e53e3e; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px;
+      font-size: 1.1rem; cursor: pointer; opacity: 0.85; transition: opacity .2s;
+    }
+    .remove-btn:hover { opacity: 1; }
+    .no-photos { text-align: center; color: #888; margin-top: 18px; }
+    @media (max-width: 600px) {
+      .container { padding: 14px; }
+      .gallery { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Painel do Administrador - Galeria de Fotos</h1>
+    <div class="add-photo">
+      <input type="file" id="photoInput" accept="image/*" style="display:none;">
+      <button onclick="document.getElementById('photoInput').click()" style="padding: 10px 18px; border: none; background: #4f46e5; color: #fff; border-radius: 6px; font-weight: bold; cursor: pointer;">
+        + Adicionar Foto
+      </button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+    <div class="no-photos" id="noPhotos">Nenhuma foto adicionada.</div>
+  </div>
+
+  <script>
+    const photoInput = document.getElementById('photoInput');
+    const gallery = document.getElementById('gallery');
+    const noPhotos = document.getElementById('noPhotos');
+
+    let photos = [];
+
+    function renderGallery() {
+      gallery.innerHTML = '';
+      if (photos.length === 0) {
+        noPhotos.style.display = 'block';
+        return;
+      }
+      noPhotos.style.display = 'none';
+      photos.forEach((photo, idx) => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        const img = document.createElement('img');
+        img.src = photo;
+        card.appendChild(img);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.innerHTML = '×';
+        removeBtn.className = 'remove-btn';
+        removeBtn.title = 'Remover foto';
+        removeBtn.onclick = () => {
+          if (confirm('Tem certeza que deseja remover esta foto?')) {
+            photos.splice(idx, 1);
+            renderGallery();
+          }
+        };
+
+        card.appendChild(removeBtn);
+        gallery.appendChild(card);
+      });
+    }
+
+    photoInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          photos.push(e.target.result);
+          renderGallery();
+        };
+        reader.readAsDataURL(file);
+      }
+      // Limpa o valor para permitir adicionar o mesmo arquivo novamente, se desejar
+      this.value = '';
+    });
+
+    // Inicializa galeria vazia
+    renderGallery();
+  </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Inscrição - Aulas de Informática</title>
+  <style>
+    /* Estilo base do corpo da página */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f0f4ff;
+      color: #000000;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Animação de entrada suave */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Estilo do logotipo no canto superior direito */
+    .logo {
+      position: absolute;
+      top: 15px;  /* Ajuste vertical */
+      right: 27px; /* Ajuste horizontal */
+    }
+
+    .logo img {
+      height: 140px; /* Aumentado de 60px para 100px */
+    }
+
+    /* Estilo do título principal */
+    h1 {
+      color: #004aad;
+      text-align: center;
+      background-color: #e6f0ff;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    /* Estilo do formulário */
+    form {
+      background: #ffffff;
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    /* Estilo dos rótulos */
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    /* Estilo dos campos de entrada e seleção */
+    select, input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    /* Efeito ao focar nos campos */
+    input:focus, select:focus {
+      border: 2px solid #004aad;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0,74,173,0.2);
+    }
+
+    /* Estilo do botão de envio */
+    input[type="submit"] {
+      margin-top: 25px;
+      background-color: #004aad;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Efeito ao passar o mouse no botão */
+    input[type="submit"]:hover {
+      background-color: #00367a;
+      transform: scale(1.02);
+    }
+
+    /* Estilo da seção informativa */
+    .info {
+      margin-top: 25px;
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+      background-color: #e6f0ff;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    /* Estilo do relógio */
+    #contador {
+      font-size: 1em;
+      margin-top: 10px;
+      color: #004aad;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logotipo -->
+  <div class="logo">
+    <img src="logo-jcc.png" alt="Logo da JCC" />
+  </div>
+
+  <!-- Título da página -->
+  <h1>Formulário de Inscrição - Aulas de Informática</h1>
+
+  <!-- Formulário de inscrição -->
+  <form action="https://formspree.io/f/xnnvbqkq" method="POST">
+    <input type="hidden" name="_redirect" value="formulario.html">
+
+    <label for="nome">Nome Completo</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="nivel">Nível</label>
+    <select id="nivel" name="nivel" required>
+      <option value="">-- Selecione --</option>
+      <option value="Nível Básico">Nível Básico</option>
+      <option value="Nível Médio">Nível Médio</option>
+      <option value="Nível Avançado">Nível Avançado</option>
+    </select>
+
+    <label for="horario">Horário</label>
+    <select id="horario" name="horario" required>
+      <option value="">-- Selecione --</option>
+      <option value="08H-10H">08H-10H</option>
+      <option value="11H-13H">11H-13H</option>
+      <option value="14H-16H">14H-16H</option>
+      <option value="18H-20H">18H-20H</option>
+    </select>
+
+    <input type="submit" value="Enviar Inscrição">
+  </form>
+
+  <!-- Informação e contagem regressiva -->
+  <div class="info">
+    🗓 Início das aulas: <strong>01 de Agosto</strong>
+    <div id="contador"></div>
+  </div>
+
+  <!-- Script do relógio regressivo -->
+  <script>
+    // Define a data de início das aulas
+    const dataAulas = new Date("2025-08-01T00:00:00").getTime();
+
+    const contador = document.getElementById("contador");
+
+    const intervalo = setInterval(function() {
+      const agora = new Date().getTime();
+      const diferenca = dataAulas - agora;
+
+      // Cálculo dos dias, horas, minutos e segundos
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+      // Exibe a contagem
+      contador.innerHTML = `Contagem regressiva: ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+      // Quando a data é atingida
+      if (diferenca < 0) {
+        clearInterval(intervalo);
+        contador.innerHTML = "As aulas já começaram!";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
