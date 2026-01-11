@@ -6,173 +6,149 @@
 <title>JC Computer Services EI</title>
 
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f4f6fa;
-  padding-top: 70px;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#f4f6fa;
+  padding-top:70px;
+  color:#222;
 }
 
 /* MENU */
-.menu-fixo {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(90deg,#0b2c5d,#123f85);
-  padding: 15px 0;
-  z-index: 1000;
+.menu-fixo{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:linear-gradient(90deg,#0b2c5d,#123f85);
+  padding:15px 0;
+  z-index:1000;
 }
-
-.menu-fixo ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.menu-fixo ul{
+  display:flex;
+  justify-content:center;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
-
-.menu-fixo li { margin: 0 25px; }
-
-.menu-fixo a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+.menu-fixo li{margin:0 20px}
+.menu-fixo a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* HERO */
-header {
-  height: 420px;
+header{
+  height:420px;
   background:
     linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+    url("images/banner.jpg");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
 }
-
-header h1 { font-size: 3em; margin-bottom: 10px; }
-header h2 { font-weight: 300; }
-
-header button {
-  margin-top: 25px;
-  padding: 14px 40px;
-  border-radius: 30px;
-  border: none;
-  background: #ffcc00;
-  font-weight: bold;
-  cursor: pointer;
+header h1{font-size:3em;margin-bottom:10px}
+header h2{font-weight:300}
+header button{
+  margin-top:25px;
+  padding:14px 40px;
+  border-radius:30px;
+  border:none;
+  background:#ffcc00;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 /* SEÇÕES */
-section { padding: 80px 20px; }
+section{padding:80px 20px}
 
 /* BLOCO TEXTO + IMAGEM */
-.bloco {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap;
+.bloco{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
 }
-
-.bloco img {
-  max-width: 480px;
-  width: 100%;
-  border-radius: 12px;
+.bloco img{
+  max-width:480px;
+  width:100%;
+  border-radius:15px;
 }
-
-.bloco-texto {
-  flex: 1;
-}
-
-.bloco-texto h2 {
-  color: #0b2c5d;
-  margin-bottom: 15px;
-}
-
-.bloco-texto p {
-  line-height: 1.6;
-  font-size: 1.05em;
-}
+.bloco-texto{flex:1}
+.bloco-texto h2{color:#0b2c5d}
+.bloco-texto p{line-height:1.6}
 
 /* SERVIÇOS */
-.servicos {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 30px;
+.servicos{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
-
-.servico {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+.servico{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  transition:.3s;
 }
-
-.servico img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
+.servico:hover{transform:translateY(-6px)}
+.servico img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
 }
-
-.servico div {
-  padding: 20px;
-  text-align: center;
-}
-
-.servico h3 { color: #0b2c5d; }
-
-.servico button {
-  margin-top: 15px;
-  padding: 10px 25px;
-  border-radius: 20px;
-  border: none;
-  background: #09be21;
-  color: white;
-  cursor: pointer;
+.servico div{padding:20px;text-align:center}
+.servico h3{color:#0b2c5d}
+.servico button{
+  margin-top:15px;
+  padding:10px 25px;
+  border-radius:20px;
+  border:none;
+  background:#09be21;
+  color:white;
+  cursor:pointer;
 }
 
 /* GALERIA */
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: auto;
+.galeria-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
 }
-
-.galeria-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
+.galeria-grid img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
 }
 
 /* FOOTER */
-footer {
-  background: #0b2c5d;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
+footer{
+  background:#0b2c5d;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
 }
 
 /* WHATSAPP */
-.whatsapp-flutuante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.whatsapp-flutuante{
+  position:fixed;
+  bottom:20px;
+  right:20px;
 }
-.whatsapp-flutuante img { width: 60px; }
+.whatsapp-flutuante img{width:60px}
 </style>
 </head>
 
@@ -195,26 +171,24 @@ footer {
 </div>
 </header>
 
-<!-- SOBRE -->
 <section id="sobre">
 <div class="bloco">
-  <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e">
+  <img src="images/sobre.jpg">
   <div class="bloco-texto">
     <h2>Sobre a Empresa</h2>
-    <p>Fundada em 2023, a JC Computer Services EI oferece soluções inovadoras em TI.</p>
+    <p>Fundada em 2023, oferecemos soluções inovadoras em TI.</p>
     <p>Atuamos com responsabilidade técnica, transparência e foco em resultados.</p>
   </div>
 </div>
 </section>
 
-<!-- SERVIÇOS -->
 <section id="servicos">
 <h2 style="text-align:center">Nossos Serviços</h2>
 
 <div class="servicos">
 
 <div class="servico">
-  <img src="https://images.unsplash.com/photo-1584697964192-1c1c1c1c">
+  <img src="images/aulas.jpg">
   <div>
     <h3>Aulas de Informática</h3>
     <p>Ensino prático para iniciantes e avançados.</p>
@@ -223,7 +197,7 @@ footer {
 </div>
 
 <div class="servico">
-  <img src="https://images.unsplash.com/photo-1581092919531-8f4f">
+  <img src="images/suporte.jpg">
   <div>
     <h3>Suporte Técnico</h3>
     <p>Manutenção preventiva e corretiva.</p>
@@ -231,7 +205,7 @@ footer {
 </div>
 
 <div class="servico">
-  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+  <img src="images/redes.jpg">
   <div>
     <h3>Redes e Wi-Fi</h3>
     <p>Instalação e configuração profissional.</p>
@@ -239,9 +213,9 @@ footer {
 </div>
 
 <div class="servico">
-  <img src="https://images.unsplash.com/photo-1587825140708">
+  <img src="images/manutencao.jpg">
   <div>
-    <h3>Manutenção de PCs</h3>
+    <h3>Manutenção de Computadores</h3>
     <p>Formatação, limpeza e otimização.</p>
   </div>
 </div>
@@ -249,20 +223,19 @@ footer {
 </div>
 </section>
 
-<!-- GALERIA -->
 <section>
 <h2 style="text-align:center">Trabalhos Realizados</h2>
 <div class="galeria-grid">
-  <img src="trabalho.jpg" onclick="abrirLightbox(this)">
-  <img src="ModernFutsal.png" onclick="abrirLightbox(this)">
-  <img src="Blue And Orange.jpg" onclick="abrirLightbox(this)">
+  <img src="images/trabalho1.jpg" onclick="abrirLightbox(this)">
+  <img src="images/trabalho2.jpg" onclick="abrirLightbox(this)">
+  <img src="images/trabalho3.jpg" onclick="abrirLightbox(this)">
 </div>
 </section>
 
 <footer>
 <p>Email: jccomputerservicesei@gmail.com</p>
 <p>WhatsApp: +258 87 931 7552</p>
-<p>&copy; 2025</p>
+<p>&copy; 2025 - JC Computer Services EI</p>
 </footer>
 
 <div class="whatsapp-flutuante">
@@ -273,10 +246,10 @@ footer {
 
 <script>
 function abrirLightbox(img){
-  const lb = document.createElement("div");
-  lb.style = "position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center";
-  lb.innerHTML = `<img src="${img.src}" style="max-width:90%;border-radius:10px">`;
-  lb.onclick = ()=>lb.remove();
+  const lb=document.createElement("div");
+  lb.style="position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;justify-content:center;align-items:center;z-index:9999";
+  lb.innerHTML=`<img src="${img.src}" style="max-width:90%;border-radius:10px">`;
+  lb.onclick=()=>lb.remove();
   document.body.appendChild(lb);
 }
 </script>
