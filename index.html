@@ -3,19 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Página Inicial - Soluções em TI</title>
+<title>JC Computer Services EI</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  scroll-behavior: smooth;
+  background: #f4f6fa;
   padding-top: 70px;
-  background-color: #f4f6f9;
 }
 
 /* MENU */
@@ -23,142 +20,150 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #0b2c5d;
-  z-index: 1000;
+  background: linear-gradient(90deg,#0b2c5d,#123f85);
   padding: 15px 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  z-index: 1000;
 }
 
 .menu-fixo ul {
-  list-style: none;
   display: flex;
   justify-content: center;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.menu-fixo ul li {
-  margin: 0 25px;
-}
+.menu-fixo li { margin: 0 25px; }
 
-.menu-fixo ul li a {
+.menu-fixo a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.menu-fixo ul li a:hover {
-  color: #ffcc00;
 }
 
 /* HERO */
 header {
+  height: 420px;
   background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
     url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 140px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: white;
 }
 
-header h1 {
-  font-size: 3em;
-  margin-bottom: 15px;
-}
-
-header h2 {
-  font-weight: 300;
-}
+header h1 { font-size: 3em; margin-bottom: 10px; }
+header h2 { font-weight: 300; }
 
 header button {
-  margin-top: 30px;
-  padding: 14px 35px;
-  font-size: 1em;
-  background-color: #ffcc00;
-  border: none;
+  margin-top: 25px;
+  padding: 14px 40px;
   border-radius: 30px;
+  border: none;
+  background: #ffcc00;
   font-weight: bold;
   cursor: pointer;
 }
 
-header button:hover {
-  background-color: #ffaa00;
-  transform: scale(1.05);
+/* SEÇÕES */
+section { padding: 80px 20px; }
+
+/* BLOCO TEXTO + IMAGEM */
+.bloco {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* SEÇÕES */
-section {
-  padding: 80px 20px;
-  text-align: center;
+.bloco img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.bloco-texto {
+  flex: 1;
+}
+
+.bloco-texto h2 {
+  color: #0b2c5d;
+  margin-bottom: 15px;
+}
+
+.bloco-texto p {
+  line-height: 1.6;
+  font-size: 1.05em;
 }
 
 /* SERVIÇOS */
 .servicos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
   max-width: 1200px;
   margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 30px;
 }
 
 .servico {
   background: white;
-  flex: 1 1 260px;
-  max-width: 300px;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
 }
 
-.servico:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+.servico img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
 }
 
-.servico h3 {
-  color: #0b2c5d;
+.servico div {
+  padding: 20px;
+  text-align: center;
 }
+
+.servico h3 { color: #0b2c5d; }
 
 .servico button {
   margin-top: 15px;
   padding: 10px 25px;
-  background-color: #09be21;
+  border-radius: 20px;
   border: none;
+  background: #09be21;
   color: white;
-  border-radius: 30px;
-  font-weight: bold;
   cursor: pointer;
 }
 
-.servico button:hover {
-  background-color: #0b2c5d;
-}
-
-/* ORÇAMENTO & SOBRE */
-#orcamento, #sobre {
-  background-color: #ffffff;
-}
-
 /* GALERIA */
-.galeria-grid img:hover {
-  transform: scale(1.05);
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 /* FOOTER */
 footer {
-  background-color: #0b2c5d;
+  background: #0b2c5d;
   color: white;
+  text-align: center;
   padding: 40px 20px;
-}
-
-footer a {
-  color: #ffcc00;
-  text-decoration: none;
 }
 
 /* WHATSAPP */
@@ -167,41 +172,114 @@ footer a {
   bottom: 20px;
   right: 20px;
 }
-
-.whatsapp-flutuante img {
-  width: 60px;
-}
+.whatsapp-flutuante img { width: 60px; }
 </style>
 </head>
 
 <body>
 
 <nav class="menu-fixo">
-  <ul>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#orcamento">Orçamento</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="formulario.html">Inscrição</a></li>
-  </ul>
+<ul>
+  <li><a href="#servicos">Serviços</a></li>
+  <li><a href="#orcamento">Orçamento</a></li>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="formulario.html">Inscrição</a></li>
+</ul>
 </nav>
 
 <header>
-  <h1>Seja Bem Vindo Jc_Computer_Services_EI</h1>
-  <h2>Oferecemos soluções completas em TI para seu negócio</h2>
-  <button onclick="window.location.href='#orcamento'">Orçar Agora</button>
+<div>
+  <h1>JC Computer Services EI</h1>
+  <h2>Soluções completas em Tecnologia da Informação</h2>
+  <button onclick="location.href='#orcamento'">Solicitar Orçamento</button>
+</div>
 </header>
 
-<section id="servicos">
-  <h2>Nossos Principais Serviços</h2>
-  <div class="servicos">
-    <!-- TODOS OS TEUS SERVIÇOS (inalterados) -->
-    <!-- Mantidos como no teu código -->
+<!-- SOBRE -->
+<section id="sobre">
+<div class="bloco">
+  <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e">
+  <div class="bloco-texto">
+    <h2>Sobre a Empresa</h2>
+    <p>Fundada em 2023, a JC Computer Services EI oferece soluções inovadoras em TI.</p>
+    <p>Atuamos com responsabilidade técnica, transparência e foco em resultados.</p>
   </div>
+</div>
 </section>
 
-<!-- O RESTO DO TEU HTML CONTINUA IGUAL -->
-<!-- Lightbox, galeria, footer, scripts -->
+<!-- SERVIÇOS -->
+<section id="servicos">
+<h2 style="text-align:center">Nossos Serviços</h2>
+
+<div class="servicos">
+
+<div class="servico">
+  <img src="https://images.unsplash.com/photo-1584697964192-1c1c1c1c">
+  <div>
+    <h3>Aulas de Informática</h3>
+    <p>Ensino prático para iniciantes e avançados.</p>
+    <button onclick="location.href='formulario.html'">Inscrever-se</button>
+  </div>
+</div>
+
+<div class="servico">
+  <img src="https://images.unsplash.com/photo-1581092919531-8f4f">
+  <div>
+    <h3>Suporte Técnico</h3>
+    <p>Manutenção preventiva e corretiva.</p>
+  </div>
+</div>
+
+<div class="servico">
+  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+  <div>
+    <h3>Redes e Wi-Fi</h3>
+    <p>Instalação e configuração profissional.</p>
+  </div>
+</div>
+
+<div class="servico">
+  <img src="https://images.unsplash.com/photo-1587825140708">
+  <div>
+    <h3>Manutenção de PCs</h3>
+    <p>Formatação, limpeza e otimização.</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- GALERIA -->
+<section>
+<h2 style="text-align:center">Trabalhos Realizados</h2>
+<div class="galeria-grid">
+  <img src="trabalho.jpg" onclick="abrirLightbox(this)">
+  <img src="ModernFutsal.png" onclick="abrirLightbox(this)">
+  <img src="Blue And Orange.jpg" onclick="abrirLightbox(this)">
+</div>
+</section>
+
+<footer>
+<p>Email: jccomputerservicesei@gmail.com</p>
+<p>WhatsApp: +258 87 931 7552</p>
+<p>&copy; 2025</p>
+</footer>
+
+<div class="whatsapp-flutuante">
+<a href="https://wa.me/258879317552" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/124/124034.png">
+</a>
+</div>
+
+<script>
+function abrirLightbox(img){
+  const lb = document.createElement("div");
+  lb.style = "position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center";
+  lb.innerHTML = `<img src="${img.src}" style="max-width:90%;border-radius:10px">`;
+  lb.onclick = ()=>lb.remove();
+  document.body.appendChild(lb);
+}
+</script>
 
 </body>
 </html>
-
